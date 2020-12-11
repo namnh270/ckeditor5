@@ -146,7 +146,6 @@ ClassicEditor.defaultConfig = {
 			'underline',
 			'strikethrough',
 			'|',
-			'fontFamily',
 			'fontSize',
 			'fontColor',
 			'fontBackgroundColor',
