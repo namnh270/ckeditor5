@@ -36,6 +36,7 @@ import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformatio
 
 import Alignment from '@ckeditor/ckeditor5-alignment/src/alignment';
 import Font from '@ckeditor/ckeditor5-font/src/font';
+import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed';
 
 const COLORS = [
 	{
@@ -101,7 +102,7 @@ const COLORS = [
 	}
 ];
 
-export default class ClassicEditor extends ClassicEditorBase {}
+export default class ClassicEditor extends ClassicEditorBase { }
 
 // Plugins to include in the build.
 ClassicEditor.builtinPlugins = [
@@ -132,7 +133,8 @@ ClassicEditor.builtinPlugins = [
 	TableToolbar,
 	TextTransformation,
 	Alignment,
-	Font
+	Font,
+	HtmlEmbed
 ];
 
 // Editor configuration.
@@ -162,12 +164,27 @@ ClassicEditor.defaultConfig = {
 			'blockQuote',
 			'insertTable',
 			'mediaEmbed',
+			'htmlEmbed',
 			'undo',
 			'redo'
 		]
 	},
+	htmlEmbed: {
+		showPreviews: true,
+		// sanitizeHtml: (inputHtml) => {
+		// 	// Strip unsafe elements and attributes, e.g.:
+		// 	// the `<script>` elements and `on*` attributes.
+		// 	const outputHtml = sanitize(inputHtml);
+
+		// 	return {
+		// 		html: outputHtml,
+		// 		// true or false depending on whether the sanitizer stripped anything.
+		// 		hasChanged: true
+		// 	};
+		// }
+	},
 	alignment: {
-		options: [ 'left', 'center', 'right', 'justify' ]
+		options: ['left', 'center', 'right', 'justify']
 	},
 	fontSize: {
 		options: [
@@ -194,7 +211,7 @@ ClassicEditor.defaultConfig = {
 		styles: [
 			'alignLeft', 'alignCenter', 'alignRight'
 		],
-	// Configure the available image resize options.
+		// Configure the available image resize options.
 		resizeOptions: [
 			{
 				name: 'imageResize:original',
@@ -214,10 +231,10 @@ ClassicEditor.defaultConfig = {
 		],
 		toolbar: [
 			'imageStyle:alignLeft', 'imageStyle:alignCenter', 'imageStyle:alignRight',
-      '|',
-      'imageResize',
-      '|',
-      'imageTextAlternative'
+			'|',
+			'imageResize',
+			'|',
+			'imageTextAlternative'
 		]
 	},
 	table: {

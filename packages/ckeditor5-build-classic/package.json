@@ -73,6 +73,7 @@
   },
   "dependencies": {
     "@ckeditor/ckeditor5-alignment": "^24.0.0",
-    "@ckeditor/ckeditor5-font": "^24.0.0"
+    "@ckeditor/ckeditor5-font": "^24.0.0",
+    "@ckeditor/ckeditor5-html-embed": "^24.0.0"
   }
 }
